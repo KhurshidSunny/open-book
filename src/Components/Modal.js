@@ -1,3 +1,4 @@
+import { Link, useNavigate } from "react-router-dom";
 import { useBooks } from "../contexts/SongsContext";
 
 function Modal() {
@@ -25,12 +26,14 @@ function Modal() {
     <>
       <div className="overlay">
         <div className="overlay-inner">
-          <button
-            className="close"
-            onClick={() => dispatch({ type: "closeModal" })}
-          >
-            <i class="fas fa-times"></i>
-          </button>
+          <Link to="/">
+            <button
+              className="close"
+              onClick={() => dispatch({ type: "closeModal" })}
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </Link>
           <div className="inner-box">
             <img src={bookImage} alt="" />
             <div className="info">
